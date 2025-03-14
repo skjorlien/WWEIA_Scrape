@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-
+from settings import DATA_DIR 
 '''
 Notes on data availability:
 
@@ -13,8 +13,6 @@ I have "day"
 
 '''
 
-
-DATA_DIR = Path("~/Data").expanduser() / "WWEIA"
 
 varlist = pd.read_csv(DATA_DIR / "variables_list.csv")
 varmap = dict(zip(varlist["Variable Name"], varlist["Variable Description"]))
@@ -59,6 +57,6 @@ product = pd.read_sas(DATA_DIR / "interview_support_file.xpt")
 product.columns = ["j", "del", "food_name"]
 product = product[["j", "food_name"]]
 
-df.to_csv(DATA_DIR / "clean" / "WWEIA_intake.csv", index=False)
-product.to_csv(DATA_DIR / "clean" / "food_name_map.csv", index=False)
-demogs.to_csv(DATA_DIR / "clean" / "demographics.csv", index=False)
+df.to_csv(DATA_DIR /  "WWEIA_intake.csv", index=False)
+product.to_csv(DATA_DIR / "food_name_map.csv", index=False)
+demogs.to_csv(DATA_DIR / "demographics.csv", index=False)

@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
 from pathlib import Path
+from settings import DATA_DIR
+
 
 '''
 Script to download all WWEIA data in the 2021 - 2023 cycle. 
@@ -9,8 +11,6 @@ There is an additional "variables_list" file that I manually saved as a csv.
 
 https://wwwn.cdc.gov/nchs/nhanes/search/DataPage.aspx?Component=Dietary&Cycle=2021-2023 
 '''
-
-DATA_DIR = Path("~/Data").expanduser() / "WWEIA"
 
 files_to_download = {
     "interview_IF_day1.xpt": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DR1IFF_L.xpt",
