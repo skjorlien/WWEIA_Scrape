@@ -13,10 +13,6 @@ I have "day"
 
 '''
 
-
-varlist = pd.read_csv(DATA_DIR / "variables_list.csv")
-varmap = dict(zip(varlist["Variable Name"], varlist["Variable Description"]))
-
 files = [x for x in DATA_DIR.iterdir() if "interview_IF" in x.name]
 
 day1_fname = "interview_IF_day1.xpt"
