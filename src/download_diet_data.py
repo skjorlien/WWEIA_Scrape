@@ -29,3 +29,10 @@ for file, url in files_to_download.items():
     with open(DATA_DIR / file, "wb") as f:
         f.write(response.content)
 
+
+# also need demographics 
+url = "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt"
+response = requests.get(url)
+
+with open(DATA_DIR / "demographics.xpt", "wb") as f:
+    f.write(response.content)
